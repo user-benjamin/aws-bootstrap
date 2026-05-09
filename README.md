@@ -65,16 +65,16 @@ terraform {
 
 ```hcl
 module "gha_role" {
-  source = "git::https://github.com/benjaminglover/aws-bootstrap//terraform/modules/github-oidc-role?ref=main"
+  source = "git::https://github.com/user-benjamin/aws-bootstrap//terraform/modules/github-oidc-role?ref=main"
 
-  repo              = "benjaminglover/your-project"
+  repo              = "user-benjamin/your-project"
   environment       = "production"          # scopes trust to this GHA environment
   oidc_provider_arn = "arn:aws:iam::..."    # from bootstrap outputs
   policy_arns       = [aws_iam_policy.deploy.arn]
 }
 ```
 
-Role name will be `github-benjaminglover-your-project-production`.
+Role name will be `github-user-benjamin-your-project-production`.
 
 ### 3. Use it in your workflow
 
